@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.dinus.MatkulController"
+            prefWidth="800" prefHeight="550"
+            style="-fx-background-color: linear-gradient(to bottom, #fdfdfd, #e9f0f5);">
+    <children>
+        <VBox spacing="15" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+            <padding><Insets top="20" left="30" right="30" bottom="20"/></padding>
+
+            <!-- Header -->
+            <Label text="Manajemen Data Mata Kuliah" style="-fx-text-fill: #2c3e50;">
+                <font>
+                    <Font name="Segoe UI Semibold" size="22"/>
+                </font>
+            </Label>
+
+            <!-- Form Input -->
+            <GridPane hgap="15" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="100" halignment="RIGHT"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+                <children>
+                    <Label text="Kode MK:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="tfKode" promptText="Contoh: 101" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Nama MK:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="tfNama" promptText="Nama mata kuliah" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="SKS:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="tfSks" promptText="Jumlah SKS" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </children>
+            </GridPane>
+
+            <!-- Tombol Aksi -->
+            <HBox spacing="10">
+                <children>
+                    <Button fx:id="btnAdd" text="Tambah" onAction="#add" style="-fx-background-color: #0d47a1; -fx-text-fill: white;"/>
+                    <Button fx:id="btnEdit" text="Edit" onAction="#edit" style="-fx-background-color: #0d47a1; -fx-text-fill: white;"/>
+                    <Button fx:id="btnDel" text="Hapus" onAction="#delete" style="-fx-background-color: #c62828; -fx-text-fill: white;"/>
+                    <Button fx:id="btnUpdate" text="Simpan" onAction="#update" style="-fx-background-color: #388e3c; -fx-text-fill: white;"/>
+                    <Button fx:id="btnCancel" text="Batal" onAction="#cancel" style="-fx-background-color: #757575; -fx-text-fill: white;"/>
+                </children>
+            </HBox>
+
+            <!-- Pencarian -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <children>
+                    <Label text="Cari:"/>
+                    <TextField fx:id="tfCari" promptText="Cari kode atau nama mata kuliah..." prefWidth="400.0"/>
+                </children>
+            </HBox>
+
+            <!-- Tabel Data -->
+            <TableView fx:id="tvMk" prefHeight="300" style="-fx-background-color: white; -fx-border-color: lightgray;">
+                <columns>
+                    <TableColumn fx:id="colKode" text="Kode MK" prefWidth="100"/>
+                    <TableColumn fx:id="colNama" text="Nama Mata Kuliah" prefWidth="400"/>
+                    <TableColumn fx:id="colSks" text="SKS" prefWidth="80"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
+</AnchorPane>

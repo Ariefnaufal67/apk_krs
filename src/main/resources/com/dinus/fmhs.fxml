@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="558.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dinus.MhsController">
+   <children>
+      <VBox prefHeight="558.0" prefWidth="1300.0" spacing="10.0" style="-fx-background-color: linear-gradient(to bottom, #e3f2fd, #ffffff);">
+         <children>
+
+            <!-- Header -->
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="1300.0" style="-fx-background-color: #1e88e5;" text="📘 Data Mahasiswa" textFill="white">
+               <font>
+                  <Font name="Segoe UI Bold" size="28.0" />
+               </font>
+            </Label>
+
+            <!-- Search Bar -->
+            <HBox spacing="8.0" alignment="CENTER_LEFT">
+               <children>
+                  <Label text="🔍 Cari Nama / NIM" style="-fx-font-size: 14px;"/>
+                  <TextField fx:id="tfCariNama" promptText="Ketik nama atau NIM..." prefWidth="400.0"  />
+               </children>
+               <padding>
+                  <Insets left="15.0" top="10.0" right="10.0" bottom="5.0" />
+               </padding>
+            </HBox>
+
+            <!-- Tabel Data -->
+            <AnchorPane prefHeight="205.0" prefWidth="1800.0">
+               <children>
+                  <TableView fx:id="tvMhs" layoutX="5.0" layoutY="0.0" prefHeight="200.0" prefWidth="1300.0" style="-fx-background-color: white; -fx-border-color: #90caf9;">
+                    <columns>
+                      <TableColumn fx:id="nim" prefWidth="140.0" text="🆔 NIM" />
+                      <TableColumn fx:id="nama" prefWidth="220.0" text="👤 Nama" />
+                      <TableColumn fx:id="alamat" prefWidth="350.0" text="🏠 Alamat" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+
+            <!-- Form Input -->
+            <AnchorPane prefHeight="247.0" prefWidth="735.0">
+               <children>
+                  <Label layoutX="134.0" layoutY="62.0" text="NIM" />
+                  <Label layoutX="129.0" layoutY="107.0" text="Nama" />
+                  <Label layoutX="126.0" layoutY="149.0" text="Alamat" />
+
+                  <TextField fx:id="tfNim" layoutX="187.0" layoutY="58.0" prefHeight="28.0" prefWidth="312.0" style="-fx-background-color: #e3f2fd;" />
+                  <TextField fx:id="tfNama" layoutX="187.0" layoutY="103.0" prefHeight="28.0" prefWidth="312.0" style="-fx-background-color: #e3f2fd;" />
+                  <TextField fx:id="tfAlamat" layoutX="187.0" layoutY="145.0" prefHeight="28.0" prefWidth="312.0" style="-fx-background-color: #e3f2fd;" />
+
+                  <HBox spacing="10" layoutX="134.0" layoutY="200.0">
+    <children>
+        <Button fx:id="btnAdd"
+                text="➕ Tambah"
+                onAction="#add"
+                mnemonicParsing="false"
+                style="-fx-background-color: #0d47a1; -fx-text-fill: white;" />
+
+        <Button fx:id="btnEdit"
+                text="✏️ Edit"
+                onAction="#edit"
+                mnemonicParsing="false"
+                style="-fx-background-color: #0d47a1; -fx-text-fill: white;" />
+
+        <Button fx:id="btnDel"
+                text="🗑️ Delete"
+                onAction="#delete"
+                mnemonicParsing="false"
+                style="-fx-background-color: #c62828; -fx-text-fill: white;" />
+
+        <Button fx:id="btnUpdate"
+                text="💾 Update"
+                onAction="#update"
+                mnemonicParsing="false"
+                style="-fx-background-color: #388e3c; -fx-text-fill: white;" />
+
+        <Button fx:id="btnCancel"
+                text="❌ Cancel"
+                onAction="#cancel"
+                mnemonicParsing="false"
+                style="-fx-background-color: #757575; -fx-text-fill: white;" />
+    </children>
+</HBox>
+
+               </children>
+            </AnchorPane>
+
+            <!-- Footer Message / Error -->
+            <Label fx:id="lblErr" alignment="CENTER" prefHeight="38.0" prefWidth="736.0" style="-fx-background-color: #ffe082;" textFill="#d32f2f">
+               <font>
+                  <Font name="Segoe UI Semibold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

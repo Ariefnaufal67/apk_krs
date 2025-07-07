@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="700" prefWidth="1020"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.dinus.MenuController">
+
+   <!-- HEADER / TOP NAV -->
+   <top>
+      <Pane prefHeight="63.0" prefWidth="1070.0"
+            style="-fx-background-color: #0d47a1;"
+            BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER"
+                   contentDisplay="CENTER"
+                   layoutX="20"
+                   layoutY="18"
+                   text="📘 Sistem KRS - Dashboard"
+                   textFill="#ffffff">
+               <font>
+                  <Font name="Segoe UI Semibold" size="20.0" />
+               </font>
+            </Label>
+
+            <Label fx:id="lbTeks"
+                   layoutX="20.0" layoutY="40.0"
+                   text="-" textFill="#cfd8dc">
+               <font>
+                  <Font size="12" />
+               </font>
+            </Label>
+
+            <Button fx:id="btnLogout"
+                    layoutX="920.0" layoutY="10.0"
+                    mnemonicParsing="false"
+                    onAction="#logout"
+                    prefHeight="40.0" prefWidth="80.0"
+                    style="-fx-background-color: #1976d2; -fx-text-fill: white; -fx-background-radius: 6;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+               <text>Logout</text>
+            </Button>
+         </children>
+      </Pane>
+   </top>
+
+   <!-- SIDE NAV -->
+   <left>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeeee;"
+            BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="0.0" layoutY="14.0"
+                  prefHeight="650.0" prefWidth="200.0" spacing="8.0"
+                  style="-fx-padding: 20;">
+               <children>
+                  <Button fx:id="btnHome" text="🏠 Home" onAction="#homee"
+                          prefHeight="40" prefWidth="180"
+                          style="-fx-background-color: #ffffff; -fx-text-fill: #0d47a1; -fx-border-color: #cfd8dc; -fx-border-radius: 4;">
+                     <font>
+                        <Font size="14.0"/>
+                     </font>
+                  </Button>
+                  <Button fx:id="btnMhs" text="👩‍🎓 Mahasiswa" onAction="#mhs"
+                          prefHeight="40" prefWidth="180"
+                          style="-fx-background-color: #ffffff; -fx-text-fill: #0d47a1; -fx-border-color: #cfd8dc;">
+                     <font>
+                        <Font size="14.0"/>
+                     </font>
+                  </Button>
+
+                  <!-- ✅ TOMBOL DOSEN BARU -->
+                  <Button fx:id="btnDosen" text="👨‍🏫 Dosen" onAction="#dosen"
+                          prefHeight="40" prefWidth="180"
+                          style="-fx-background-color: #ffffff; -fx-text-fill: #0d47a1; -fx-border-color: #cfd8dc;">
+                     <font>
+                        <Font size="14.0"/>
+                     </font>
+                  </Button>
+
+                  <Button fx:id="btnMatkul" text="📚 Matakuliah" onAction="#matkul"
+                          prefHeight="40" prefWidth="180"
+                          style="-fx-background-color: #ffffff; -fx-text-fill: #0d47a1; -fx-border-color: #cfd8dc;">
+                     <font>
+                        <Font size="14.0"/>
+                     </font>
+                  </Button>
+                  <Button fx:id="btnJadwal" text="🗓 Jadwal" onAction="#jadwal"
+                          prefHeight="40" prefWidth="180"
+                          style="-fx-background-color: #ffffff; -fx-text-fill: #0d47a1; -fx-border-color: #cfd8dc;">
+                     <font>
+                        <Font size="14.0"/>
+                     </font>
+                  </Button>
+                  <Button fx:id="btnKrs" text="📝 KRS" onAction="#krs"
+                          prefHeight="40" prefWidth="180"
+                          style="-fx-background-color: #ffffff; -fx-text-fill: #0d47a1; -fx-border-color: #cfd8dc;">
+                     <font>
+                        <Font size="14.0"/>
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSelesai" text="✅ Selesai" onAction="#selesai"
+                          prefHeight="40" prefWidth="180"
+                          style="-fx-background-color: #ffffff; -fx-text-fill: #0d47a1; -fx-border-color: #cfd8dc;">
+                     <font>
+                        <Font size="14.0"/>
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </left>
+
+   <!-- MAIN CONTENT -->
+   <center>
+      <AnchorPane prefHeight="650.0" prefWidth="870.0">
+         <children>
+            <StackPane fx:id="contentArea"
+                       prefHeight="600.0" prefWidth="870.0"
+                       AnchorPane.bottomAnchor="0.0"
+                       AnchorPane.leftAnchor="0.0"
+                       AnchorPane.rightAnchor="0.0"
+                       AnchorPane.topAnchor="0.0"
+                       style="-fx-background-color: #f5f5f5; -fx-padding: 10;">
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </center>
+
+</BorderPane>
