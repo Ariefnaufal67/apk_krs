@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="538.0" prefWidth="887.0"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.dinus.JadwalController"
+      spacing="8"
+      style="-fx-background-color: linear-gradient(to right, #fefefe, #e3f2fd);">
+
+    <children>
+
+        <!-- Header -->
+        <Label alignment="CENTER"
+               prefHeight="70.0"
+               prefWidth="1800.0"
+               style="-fx-background-color: #2196f3; -fx-text-fill: white;"
+               text="📅 Form Data Jadwal">
+            <font>
+                <Font name="Segoe UI Bold" size="26.0"/>
+            </font>
+        </Label>
+
+        <!-- Pencarian -->
+        <AnchorPane prefHeight="49.0" prefWidth="887.0">
+            <children>
+                <Label layoutX="31.0" layoutY="10.0"
+                       style="-fx-font-size: 14px; -fx-text-fill: #333;"
+                       text="🔍 Cari Jadwal:"/>
+                <TextField fx:id="tfCari"
+                           layoutX="140.0" layoutY="10.0"
+                           prefHeight="26.0" prefWidth="587.0"
+                           promptText="Masukkan kata kunci..."/>
+            </children>
+        </AnchorPane>
+
+        <!-- Tabel -->
+        <TableView fx:id="tbJadwal"
+                   prefHeight="193.0" prefWidth="769.0"
+                   style="-fx-background-color: white; -fx-border-color: #90caf9;">
+            <columns>
+                <TableColumn fx:id="kodeMk" prefWidth="86.0" text="Kode MK"/>
+                <TableColumn fx:id="namaMk" prefWidth="221.0" text="Mata Kuliah"/>
+                <TableColumn fx:id="kelas" prefWidth="115.0" text="Kelas"/>
+                <TableColumn fx:id="hari" prefWidth="137.0" text="Hari"/>
+                <TableColumn fx:id="jam" prefWidth="84.0" text="Jam"/>
+                <TableColumn fx:id="ruang" prefWidth="125.0" text="Ruang"/>
+                <TableColumn fx:id="dosen" prefWidth="125.0" text="Dosen"/>
+                
+            </columns>
+        </TableView>
+
+        <!-- Form -->
+        <AnchorPane prefHeight="307.0" prefWidth="823.0">
+            <children>
+
+                <Label layoutX="174.0" layoutY="39.0" text="Kode Matkul:" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfKodematkul" layoutX="276.0" layoutY="35.0"
+                           prefHeight="25.0" prefWidth="79.0"/>
+
+<Button fx:id="btnPilih" layoutX="358.0" layoutY="35.0"
+        prefHeight="25.0" prefWidth="22.0"
+        text="..." onAction="#pilihMatkul"
+        style="-fx-background-color: #64b5f6; -fx-text-fill: white;"/>
+
+
+                <TextField fx:id="tfNmMatkul" layoutX="384.0" layoutY="35.0"
+                           promptText="Nama Matkul"
+                           editable="false"
+                           prefHeight="25.0" prefWidth="383.0"
+                           style="-fx-opacity: 0.85;"/>
+
+                <Label layoutX="196.0" layoutY="74.0" text="Kelas:" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfKelas" layoutX="276.0" layoutY="67.0" prefHeight="25.0" prefWidth="490.0"/>
+
+                <Label layoutX="240.0" layoutY="105.0" text="Hari:" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfHari" layoutX="276.0" layoutY="101.0" prefHeight="25.0" prefWidth="490.0"/>
+
+                <Label layoutX="240.0" layoutY="137.0" text="Jam:" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfJam" layoutX="276.0" layoutY="133.0" prefHeight="25.0" prefWidth="490.0"/>
+
+                <Label layoutX="233.0" layoutY="171.0" text="Ruang:" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfRuang" layoutX="276.0" layoutY="167.0" prefHeight="25.0" prefWidth="490.0"/>
+
+                <Label layoutX="227.0" layoutY="200.0" text="Dosen:" style="-fx-font-weight: bold;" />
+                <ComboBox fx:id="cbDosen" layoutX="276.0" layoutY="197.0"
+                    prefWidth="490.0" promptText="Pilih Dosen"/>
+                <!-- Tombol -->
+                <Button fx:id="btnAdd" layoutX="95.0" layoutY="231.0" prefHeight="25.0" prefWidth="72.0"
+                        text="Tambah" onAction="#add"
+                        style="-fx-background-color: #0d47a1; -fx-text-fill: white;"/>
+
+                <Button fx:id="btnEdit" layoutX="174.0" layoutY="231.0" prefHeight="25.0" prefWidth="72.0"
+                        text="Edit" onAction="#edit"
+                        style="-fx-background-color:#0d47a1; -fx-text-fill: white;"/>
+
+                <Button fx:id="btnDelete" layoutX="261.0" layoutY="231.0" prefHeight="25.0" prefWidth="72.0"
+                        text="Hapus" onAction="#delete"
+                        style="-fx-background-color: #c62828; -fx-text-fill: white;"/>
+
+                <Button fx:id="btnUpdate" layoutX="353.0" layoutY="231.0" prefHeight="25.0" prefWidth="72.0"
+                        text="Simpan" onAction="#update"
+                        style="-fx-background-color: #388e3c; -fx-text-fill: white;"/>
+
+                <Button fx:id="btnCancel" layoutX="434.0" layoutY="231.0" prefHeight="25.0" prefWidth="72.0"
+                        text="Batal" onAction="#cancel"
+                        style="-fx-background-color: #757575; -fx-text-fill: white;"/>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

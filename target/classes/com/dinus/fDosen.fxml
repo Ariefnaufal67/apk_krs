@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.dinus.DosenController"
+      spacing="15" style="-fx-background-color: #f5f5f5;">
+    
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <!-- Form Input -->
+    <HBox spacing="10">
+        <children>
+            <TextField fx:id="tfKodeDsn" promptText="Kode Dosen" 
+                       style="-fx-pref-width: 150;" />
+            <TextField fx:id="tfNamaDsn" promptText="Nama Dosen" 
+                       style="-fx-pref-width: 300;" />
+        </children>
+    </HBox>
+
+    <!-- Tombol Aksi -->
+    <HBox spacing="10">
+        <children>
+            <Button fx:id="btnAdd" text="Tambah" onAction="#add"
+                    style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="btnEdit" text="Edit" onAction="#edit"
+                    style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="btnDelete" text="Hapus" onAction="#delete"
+                    style="-fx-background-color: #c62828; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="btnUpdate" text="Simpan" onAction="#update"
+                    style="-fx-background-color: #388e3c; -fx-text-fill: white; -fx-background-radius: 6;" />
+            <Button fx:id="btnCancel" text="Batal" onAction="#cancel"
+                    style="-fx-background-color: #757575; -fx-text-fill: white; -fx-background-radius: 6;" />
+        </children>
+    </HBox>
+
+    <!-- Tabel Data -->
+    <TableView fx:id="tbDosen" prefHeight="400.0" style="-fx-background-color: white;">
+        <columns>
+            <TableColumn fx:id="colKode" text="Kode Dosen" prefWidth="200" />
+            <TableColumn fx:id="colNama" text="Nama Dosen" prefWidth="400" />
+        </columns>
+    </TableView>
+</VBox>

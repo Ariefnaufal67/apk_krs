@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.dinus.KrsController"
+      spacing="15" alignment="TOP_LEFT"
+      style="-fx-background-color: linear-gradient(to bottom, #fdfdfd, #e4f1f9);"
+      prefWidth="880" prefHeight="550">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <!-- Judul -->
+    <Label text="Manajemen Kartu Rencana Studi (KRS)" style="-fx-text-fill: #2c3e50;">
+        <font>
+            <Font name="Segoe UI Semibold" size="22"/>
+        </font>
+    </Label>
+
+    <!-- Input Form -->
+    <GridPane hgap="10" vgap="12">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="90"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <children>
+            <Label text="NIM:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbNim" prefWidth="200" onAction="#onPilihMhs" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Nama Mahasiswa:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfNamaMhs" editable="false" prefWidth="300" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Kode MK:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbKodeMk" prefWidth="200" onAction="#onPilihMk" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Nama MK:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfNamaMk" editable="false" prefWidth="300" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Kelas:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbKelas" prefWidth="100" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Status:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cbStatus" prefWidth="100" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        </children>
+    </GridPane>
+
+    <!-- Tombol Aksi -->
+    <HBox spacing="10">
+        <Button fx:id="btnAdd" text="Tambah" onAction="#add" style="-fx-background-color: #0d47a1; -fx-text-fill: white;"/>
+        <Button fx:id="btnEdit" text="Edit" onAction="#edit" style="-fx-background-color: #0d47a1; -fx-text-fill: white;"/>
+        <Button fx:id="btnDelete" text="Hapus" onAction="#delete" style="-fx-background-color: #c62828; -fx-text-fill: white;"/>
+        <Button fx:id="btnUpdate" text="Simpan" onAction="#update" style="-fx-background-color: #388e3c; -fx-text-fill: white;"/>
+        <Button fx:id="btnCancel" text="Batal" onAction="#cancel" style="-fx-background-color: #757575; -fx-text-fill: white;"/>
+    </HBox>
+
+    <!-- Tabel -->
+    <TableView fx:id="tvKrs" prefHeight="300" style="-fx-border-color: #dcdde1;">
+        <columns>
+            <TableColumn fx:id="colNim" text="NIM" prefWidth="100"/>
+            <TableColumn fx:id="colNamaMhs" text="Nama Mahasiswa" prefWidth="180"/>
+            <TableColumn fx:id="colKodeMk" text="Kode MK" prefWidth="100"/>
+            <TableColumn fx:id="colNamaMk" text="Nama MK" prefWidth="200"/>
+            <TableColumn fx:id="colKelas" text="Kelas" prefWidth="80"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
